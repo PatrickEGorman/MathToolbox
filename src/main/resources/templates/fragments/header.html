@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="common-files">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/bootstrap/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/bootstrap.js}"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" th:fragment="header">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Math Toolbox</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarPanel" aria-controls="navbarPanel"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarPanel">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" th:classappend="${module == 'home' ? 'active' : ''}">
+                        <a class="nav-link" href="#" th:href="@{/}">Home</a>
+                    </li>
+                    <li class="nav-item" th:classappend="${module == 'editor' ? 'active' : ''}">
+                        <a class="nav-link" href="#" th:href="@{/editor}">Editor</a>
+                    </li>
+                    <li class="nav-item" th:classappend="${module == 'about' ? 'active' : ''}">
+                        <a class="nav-link" href="#" th:href="@{/about}">About</a>
+                    </li>
+                </ul>
+        </nav>
+    </header>
+</body>
+</html>
